@@ -11,9 +11,7 @@ var mergeTwo = function mergeTwo(deep, recessive, dominant) {
       domival = _ref2[1];
     if (isObject(domival)) {
       var receval = recessive[prop];
-      if (isObject(receval)) {
-        merged[prop] = mergeTwo(deep, receval, domival);
-      }
+      if (isObject(receval)) merged[prop] = mergeTwo(deep, receval, domival);
     }
   });
   return merged;

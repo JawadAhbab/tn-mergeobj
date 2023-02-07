@@ -13,9 +13,7 @@ var mergeTwo = function mergeTwo(deep, recessive, dominant) {
       domival = _ref2[1];
     if (tnValidate.isObject(domival)) {
       var receval = recessive[prop];
-      if (tnValidate.isObject(receval)) {
-        merged[prop] = mergeTwo(deep, receval, domival);
-      }
+      if (tnValidate.isObject(receval)) merged[prop] = mergeTwo(deep, receval, domival);
     }
   });
   return merged;

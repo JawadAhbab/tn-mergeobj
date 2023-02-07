@@ -8,10 +8,7 @@ export const mergeTwo = (deep: boolean, recessive: AnyObject, dominant: AnyObjec
   Object.entries(merged).forEach(([prop, domival]) => {
     if (isObject(domival)) {
       const receval = recessive[prop]
-
-      if (isObject(receval)) {
-        merged[prop] = mergeTwo(deep, receval, domival)
-      }
+      if (isObject(receval)) merged[prop] = mergeTwo(deep, receval, domival)
     }
   })
 
