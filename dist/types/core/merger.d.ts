@@ -1,4 +1,4 @@
-import { ObjectsArray } from '../types/ObjectsArray';
-export default function (deep: boolean, objs: ObjectsArray): {
+import { ObjectsArray } from './ObjectsArray';
+export declare const merger: (deep: boolean, objs: ObjectsArray) => {
     [x: string]: any;
 };

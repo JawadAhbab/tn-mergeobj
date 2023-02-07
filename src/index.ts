@@ -1,13 +1,12 @@
-import { isBoolean } from 'tn-validate'
-import { ObjectsArray } from './types/ObjectsArray'
-import merger from './core/merger'
 import { AnyObject } from 'tn-typescript'
+import { isBoolean } from 'tn-validate'
+import { merger } from './core/merger'
+import { ObjectsArray } from './core/ObjectsArray'
 
-export const mergeobj = mergeobj_
-
-function mergeobj_<T>(deep: boolean, recessive: T, dominant: AnyObject, ...dominants: AnyObject[]): T
-function mergeobj_<T>(recessive: T, dominant: AnyObject, ...dominants: AnyObject[]): T
-function mergeobj_<T>(DeepOrRec: boolean | T, RecOrDom: T, ...DomOrDoms: AnyObject[]): T {
+export const mergeobj = mergeobjfn
+function mergeobjfn<T>(deep: boolean, recessive: T, dominant: AnyObject, ...dominants: AnyObject[]): T
+function mergeobjfn<T>(recessive: T, dominant: AnyObject, ...dominants: AnyObject[]): T
+function mergeobjfn<T>(DeepOrRec: boolean | T, RecOrDom: T, ...DomOrDoms: AnyObject[]): T {
   let deep = true
   let recessive: AnyObject
   let dominent: AnyObject
@@ -25,6 +24,5 @@ function mergeobj_<T>(DeepOrRec: boolean | T, RecOrDom: T, ...DomOrDoms: AnyObje
   }
 
   const objs: ObjectsArray = [recessive, dominent, ...dominents]
-
   return merger(deep, objs) as unknown as T
 }

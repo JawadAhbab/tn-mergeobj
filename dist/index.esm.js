@@ -2,7 +2,7 @@ import _toConsumableArray from "@babel/runtime/helpers/esm/toConsumableArray";
 import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
 import _objectSpread from "@babel/runtime/helpers/esm/objectSpread2";
 import { isObject, isBoolean } from 'tn-validate';
-function mergeTwo(deep, recessive, dominant) {
+var mergeTwo = function mergeTwo(deep, recessive, dominant) {
   var merged = _objectSpread(_objectSpread({}, recessive), dominant);
   if (!deep) return merged;
   Object.entries(merged).forEach(function (_ref) {
@@ -17,17 +17,17 @@ function mergeTwo(deep, recessive, dominant) {
     }
   });
   return merged;
-}
-function merger(deep, objs) {
+};
+var merger = function merger(deep, objs) {
   var merged = mergeTwo(deep, objs[0], objs[1]);
   var remains = objs.splice(2);
   remains.forEach(function (dominent) {
     return merged = mergeTwo(deep, merged, dominent);
   });
   return merged;
-}
-var mergeobj = mergeobj_;
-function mergeobj_(DeepOrRec, RecOrDom) {
+};
+var mergeobj = mergeobjfn;
+function mergeobjfn(DeepOrRec, RecOrDom) {
   var deep = true;
   var recessive;
   var dominent;

@@ -1,7 +1,7 @@
 import { isObject } from 'tn-validate'
 import { AnyObject } from 'tn-typescript'
 
-export default function mergeTwo (deep: boolean, recessive: AnyObject, dominant: AnyObject) {
+export const mergeTwo = (deep: boolean, recessive: AnyObject, dominant: AnyObject) => {
   const merged = { ...recessive, ...dominant }
   if (!deep) return merged
 
