@@ -1,0 +1,1 @@
+{"code":"export {};\r\n","references":["/Users/jawad/Workshop/NPM/tn-mergeobj/node_modules/tn-typescript/dist/types/index.d.ts"],"dts":{"name":"/Users/jawad/Workshop/NPM/tn-mergeobj/dist/types/core/ObjectsArray.d.ts","writeByteOrderMark":false,"text":"import { AnyObject } from 'tn-typescript';\r\nexport type ObjectsArray = [AnyObject, AnyObject, ...AnyObject[]];\r\n"}}
